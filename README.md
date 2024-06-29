@@ -34,39 +34,39 @@ MSX_SDはArduinoスケッチ書き込みが必要です。
 動作確認をした部品リストを、以下に示します。  
 74HCをLSにした場合、動作しない可能性があります。  
   
-U1,U2		74LS670 x2  
-U3		74HC244  
-U4		HM628512ALP-7  
-U5		512Kx8bit以下 DIP32 EPROM（M27C4001-10F1,W27C010-70で確認）  
-U6		74HC20  
-U7		74HC00  
-U8		74HC30  
-U9		74HC139  
-CON		カードエッジコネクタ 2x25P 2.54mm  
-C1～C9		積層セラミックコンデンサ 50V 0.1uF x9  
-C10		電解コンデンサ 16V 100uF  
-RN1		集合抵抗 6素子 10kΩ  
-R1		抵抗 10kΩ  
-SW1,SW2		タクトスイッチ TVDP17-050B-D x2  
-EX5V		ピンヘッダ 1x2P 2.54mm  
-EX12V,GND	ピンヘッダ 1x3P 2.54mm  
-EXIO,A4～A7	ピンヘッダ 1x3P 2.54mm x5  
-ICソケット	DIP32（U5用）  
-ジャンパーピン 	2.54mm（EX5V,EXIO,A4～A7用） x6  
+U1,U2 : 74LS670 x2  
+U3 : 74HC244  
+U4 : HM628512ALP-7  
+U5 : 512Kx8bit以下 DIP32 EPROM（M27C4001-10F1,W27C010-70で確認）  
+U6 : 74HC20  
+U7 : 74HC00  
+U8 : 74HC30  
+U9 : 74HC139  
+CON (カードエッジコネクタ 2x25P 2.54mm  
+C1～C9 : 積層セラミックコンデンサ 50V 0.1uF x9  
+C10 : 電解コンデンサ 16V 100uF  
+RN1 : 集合抵抗 6素子 10kΩ  
+R1 : 抵抗 10kΩ  
+SW1,SW2 : タクトスイッチ TVDP17-050B-D x2  
+EX5V : ピンヘッダ 1x2P 2.54mm  
+EX12V,GND : ピンヘッダ 1x3P 2.54mm  
+EXIO,A4～A7 : ピンヘッダ 1x3P 2.54mm x5  
+ICソケット : DIP32（U5用）  
+ジャンパーピン : 2.54mm（EX5V,EXIO,A4～A7用） x6  
   
-MSX_SD ver1.6	基板は公開されているガーバーから作成  
-U1		74HC02  
-U2		74HC138  
-U3		W27C512-45Z（後半32KBを使用） ※MSXで動作確認時に使用  
-U4		uPD8255AC-5  
-U5		Arduino Pro Mini 328 5V 16MHz（ピンヘッダ付属）  
-J3		MicroSD Card Adapter  
-C1～C4		積層セラミックコンデンサ 50V 0.1uF x4  
-C5		電解コンデンサ 16V 100uF  
-D1		ダイオード 1N4148  
-ピンヘッダ	1x2P 2.54mm（Arduino A4,A5用）  
-ICソケット	DIP28（U3用）  
-microSDカード	2GB  
+MSX_SD ver1.6 : 基板は公開されているガーバーから作成  
+U1 : 74HC02  
+U2 : 74HC138  
+U3 : W27C512-45Z（後半32KBを使用） ※MSXで動作確認時に使用  
+U4 : uPD8255AC-5  
+U5 : Arduino Pro Mini 328 5V 16MHz（ピンヘッダ付属）  
+J3 : MicroSD Card Adapter  
+C1～C4 : 積層セラミックコンデンサ 50V 0.1uF x4  
+C5 : 電解コンデンサ 16V 100uF  
+D1 : ダイオード 1N4148  
+ピンヘッダ : 1x2P 2.54mm（Arduino A4,A5用）  
+ICソケット : DIP28（U3用）  
+microSDカード : 2GB  
   
 ![01](/jpg/M5MMSD1.jpg)
 ![02](/jpg/M5MMSD2.jpg)
@@ -79,15 +79,15 @@ EXIO,A4～A7ジャンパーは●側をショート、EX5V-5Vもショートし�
   
 ![03](/jpg/M5MMSD3.jpg)
   
-EXIO	MSX-I/Fの/IORQを、選択（/EXIOA or /EXIOB）します。m5は7xHを使用するので/EXIOBを設定します。  
-A4～A7	アドレスバスA4～A7を選択します（H or L）、これは使用するMSXカートリッジの仕様に強制的に合わせるものです。  
-	MSX_SDのIOポートは、38H～3BHなので、A7L, A6L, A5H, A4Hを設定します。  
-EX5V	MSX-I/Fの5V供給を選択します。5Vとショートでm5から供給です。  
-	外部供給する場合、ジャンパーを外して、EX5V側へ5Vを接続します。  
-5V	m5供給の5Vです。  
-EX12V	MSX_SDでは使用しません。ジャンパーはしないでください。  
-	MSX-I/Fに±12Vが必要な場合は、それぞれのピンから外部供給できます。  
-GND	外部供給時のGNDを接続します。  
+EXIO : MSX-I/Fの/IORQを、選択（/EXIOA or /EXIOB）します。m5は7xHを使用するので/EXIOBを設定します。  
+A4～A7 : アドレスバスA4～A7を選択します（H or L）、これは使用するMSXカートリッジの仕様に強制的に合わせるものです。  
+         MSX_SDのIOポートは、38H～3BHなので、A7L, A6L, A5H, A4Hを設定します。  
+EX5V : MSX-I/Fの5V供給を選択します。5Vとショートでm5から供給です。  
+       外部供給する場合、ジャンパーを外して、EX5V側へ5Vを接続します。  
+5V : m5供給の5Vです。  
+EX12V : MSX_SDでは使用しません。ジャンパーはしないでください。  
+        MSX-I/Fに±12Vが必要な場合は、それぞれのピンから外部供給できます。  
+GND : 外部供給時のGNDを接続します。  
   
 m5カートリッジバスの/IORQは、6xHアクセスで/EXIOA、7xHアクセスで/EXIOBがアサートされます。  
 アドレスをそのままMSX-I/Fに出力した場合、MSXカートリッジは60H～7FHまでのIO機器しか使用できません。  
@@ -159,14 +159,14 @@ SDアクセス（＋マッパー切替）については、BASIC-I,BASIC-G用の
   
 9. プログラムとか  
   
-MSXM5_SD.ino		MSX_SDのArduinoスケッチ  
+MSXM5_SD.ino : MSX_SDのArduinoスケッチ  
   
-EXT_ROM_M5.s		SDアクセス（＋マッパー切替） ソースコード  
-EXT_ROM_M5_G.ROM	BASIC-G用のRAWファイル（6000H～6FFFHへ実装用）  
-EXT_ROM_M5_I.ROM	BASIC-I用のRAWファイル（6000H～6FFFHへ実装用）  
+EXT_ROM_M5.s : SDアクセス（＋マッパー切替） ソースコード  
+EXT_ROM_M5_G.ROM : BASIC-G用のRAWファイル（6000H～6FFFHへ実装用）  
+EXT_ROM_M5_I.ROM : BASIC-I用のRAWファイル（6000H～6FFFHへ実装用）  
   
-BOOT_SAMPLE.s		ブート サンプルソースコード  
-BOOT_SAMPLE.rom		RAWファイル（2000H～2FFFHへ実装用）  
+BOOT_SAMPLE.s : ブート サンプルソースコード  
+BOOT_SAMPLE.rom : RAWファイル（2000H～2FFFHへ実装用）  
   
   
 10. ライセンスとか  
