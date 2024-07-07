@@ -165,6 +165,9 @@ EXT_ROM_M5_I.ROM : BASIC-I用のRAWファイル（6000H～6FFFHへ実装用）
 BOOT_SAMPLE.s : ブート サンプルソースコード  
 BOOT_SAMPLE.rom : RAWファイル（2000H～2FFFHへ実装用）  
   
+BOOT_SEL.s : ブートセレクターソースコード  
+BOOT_SEL.rom : RAWファイル（2000H～2FFFHへ実装用）  
+  
   
 10. ライセンスとか  
   
